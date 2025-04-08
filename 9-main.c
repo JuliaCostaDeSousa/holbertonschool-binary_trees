@@ -41,27 +41,20 @@ binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value)
  */
 int main(void)
 {
-    binary_tree_t *root;
-    size_t height;
-
-    root = binary_tree_node(NULL, 98);
-    root->left = binary_tree_node(root, 12);
-    root->right = binary_tree_node(root, 402);
-    binary_tree_insert_right(root->left, 54);
-    binary_tree_insert_right(root, 128);
-    binary_tree_insert_left(root, 45);
-    binary_tree_insert_right(root->left, 50);
-    binary_tree_insert_left(root->left->left, 10);
-    binary_tree_insert_left(root->left->left->left, 8);
-    binary_tree_print(root);
-
-
-    height = binary_tree_height(root);
-    printf("Height of %d: %+ld\n", root->n, height);
-    height = binary_tree_height(root->right);
-    printf("Height of %d: %+ld\n", root->right->n, height);
-    height = binary_tree_height(root->left->left->right);
-    printf("Height of %d: %+ld\n", root->left->left->right->n, height);
-
-    return (0);
+    binary_tree_t *a = binary_tree_node(NULL, 'A');
+    binary_tree_t *b = binary_tree_node(a, 'B');
+    binary_tree_t *c = binary_tree_node(a, 'C');
+    binary_tree_t *d = binary_tree_node(b, 'D');
+    binary_tree_t *e = binary_tree_node(b, 'E');
+    binary_tree_t *f = binary_tree_node(c, 'F');
+    
+    a->left = b;
+    a->right = c;
+    b->left = d;
+    b->right = e;
+    c->right = f;
+    
+    printf("Hauteur : %lu\n", binary_tree_height(a));
+    
+    return 0;
 }
