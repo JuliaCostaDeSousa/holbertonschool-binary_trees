@@ -7,6 +7,7 @@
  * Return: pointeur vers le frère ou la sœur
  * ou NULL si pas de frère ou de sœur
  */
+
 binary_tree_t *binary_tree_sibling(binary_tree_t *node)
 {
 	if (node == NULL || node->parent == NULL)
@@ -18,4 +19,6 @@ binary_tree_t *binary_tree_sibling(binary_tree_t *node)
 		return (node->parent->left);
 	else
 		return (NULL);
+
+	return (NULL);
 }
